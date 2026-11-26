@@ -42,7 +42,7 @@
       if (el.tagName === "A") el.href = `mailto:${email}`;
     } else {
       el.textContent = "Official support email: to be confirmed";
-      if (el.tagName === "A") { el.href = "#support-placeholder"; el.removeAttribute("target"); }
+      if (el.tagName === "A") { el.removeAttribute("href"); el.removeAttribute("target"); }
     }
   });
 
@@ -55,25 +55,42 @@
       btn.href = cfg.apkUrl;
       btn.removeAttribute("aria-disabled");
       btn.classList.remove("is-disabled");
-      btn.addEventListener("click", () => setNote("Download starting from the configured official source.", true));
-      setNote("Official APK link configured.", true);
+      const readyNote = `Official APK ${displayValue(cfg.version, "1.1.0")} (${displayValue(cfg.apkFileSize, "8.8 MB")}) is ready to download.`;
+      btn.addEventListener("click", () => setNote("Download starting from the verified GitHub Releases source.", true));
+      setNote(readyNote, true);
     } else {
-      btn.href = "#download-not-configured";
+      btn.removeAttribute("href");
       btn.setAttribute("aria-disabled", "true");
       btn.classList.add("is-disabled");
-      const msg = "Official APK download link is not configured yet. Check back on the official LOOPZ release channel.";
+      const msg = "No verified APK URL is available for this release. Check the official LOOPZ release channel for updates.";
       setNote(msg, false);
       btn.addEventListener("click", (e) => { e.preventDefault(); setNote(msg, false); btn.blur(); });
     }
   });
 
   // SHA256 copy
+  const copyToClipboard = async (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      try { await navigator.clipboard.writeText(text); return; } catch { /* fall back below */ }
+    }
+    const field = document.createElement("textarea");
+    field.value = text;
+    field.setAttribute("readonly", "");
+    field.style.position = "fixed";
+    field.style.opacity = "0";
+    document.body.appendChild(field);
+    field.select();
+    const copied = document.execCommand("copy");
+    field.remove();
+    if (!copied) throw new Error("Clipboard copy failed");
+  };
+
   document.querySelectorAll("[data-copy-sha]").forEach((btn) => {
     btn.addEventListener("click", async () => {
       const sha = (cfg.sha256 || "").trim();
       const out = document.getElementById(btn.getAttribute("data-copy-sha"));
       if (!isConfiguredValue(sha)) { if (out) out.textContent = "Checksum placeholder — no verified SHA-256 configured yet."; return; }
-      try { await navigator.clipboard.writeText(sha); if (out) out.textContent = "SHA-256 copied to clipboard."; }
+      try { await copyToClipboard(sha); if (out) out.textContent = "SHA-256 copied to clipboard."; }
       catch { if (out) out.textContent = "Could not copy automatically. Please copy the checksum manually."; }
     });
   });

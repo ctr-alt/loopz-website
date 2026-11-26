@@ -17,27 +17,27 @@ This site is intentionally separate from the Android app project. It does **not*
 - `assets/images/` — Brand assets copied from `/brand` (logo/mark/wordmark/icon)
 - `assets/fonts/` — Outfit font files copied from `/brand/fonts`
 
-## Configure the APK download
+## APK download configuration
 
-Edit `site.config.js` before publishing:
+`site.config.js` contains the verified LOOPZ 1.1.0 release details:
 
 ```js
 window.LOOPZ_CONFIG = {
-  apkUrl: "https://official-domain.example/loopz-1.1.0.apk", // real HTTPS URL
-  apkFileSize: "XX MB",
-  releaseDate: "YYYY-MM-DD",
-  minAndroidVersion: "Android X+ (API XX)",
-  sha256: "VERIFIED_SHA256_CHECKSUM",
-  supportEmail: "support@example.com",
+  apkUrl: "https://github.com/ctr-alt/loopz-website/releases/latest/download/LOOPZ-1.1.0.apk",
+  apkFileSize: "8.8 MB",
+  releaseDate: "REPLACE_WITH_RELEASE_DATE",
+  minAndroidVersion: "REPLACE_WITH_MIN_ANDROID_VERSION",
+  sha256: "2d4a63826076ebef1872af27773983fa6cac6714ed219ed787233215814ac484",
+  supportEmail: "REPLACE_WITH_OFFICIAL_SUPPORT_EMAIL",
   version: "1.1.0"
 };
 ```
 
 ### Important behavior
 
-- The download button **does not** point to a fake/broken link when `apkUrl` is not configured.
-- Until `apkUrl` is a real `https://` URL and not a placeholder, the button is disabled and shows a temporary message.
-- Metadata placeholders are displayed as “To be confirmed” until replaced.
+- The Android APK download button is enabled and points directly to the verified GitHub Releases asset.
+- The Download page shows version 1.1.0, file size 8.8 MB, and the full SHA-256 checksum; the copy button copies the configured checksum.
+- Release date, minimum Android version, and support email still need verified values and render as “To be confirmed” until provided.
 
 ## Local development
 
@@ -98,10 +98,9 @@ Upload all files in `loopz-website/` preserving directory structure. Serve `inde
 ## Verification checklist
 
 - [ ] All nav/footer links work.
-- [ ] Download button is disabled until real APK URL is configured.
-- [ ] `site.config.js` contains real HTTPS APK URL.
-- [ ] APK file size, release date, minimum Android version, and SHA-256 are verified.
-- [ ] Support email placeholder replaced.
+- [x] Download button is enabled and points to the verified HTTPS APK URL.
+- [x] Version 1.1.0, APK file size 8.8 MB, and full SHA-256 are displayed.
+- [ ] Release date, minimum Android version, and support email are verified.
 - [ ] Privacy policy legal placeholders confirmed (entity/address/final legal contact).
 - [ ] No analytics/ads/backends added.
 - [ ] Mobile and desktop responsive checks pass.
