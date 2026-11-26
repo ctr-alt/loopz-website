@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — LOOPZ</title>
+  <meta name="description" content="Preliminary privacy policy for LOOPZ based on verified repository audit findings. Local processing, third-party requests, and developer-confirmation items are clearly marked.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#06060a">
+  <link rel="canonical" href="https://loopz.app/privacy.html">
+  <meta property="og:title" content="Privacy Policy — LOOPZ">
+  <meta property="og:description" content="Preliminary privacy policy for LOOPZ based on verified repository audit findings. Local processing, third-party requests, and developer-confirmation items are clearly marked.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/loopz-app-icon-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — LOOPZ">
+  <meta name="twitter:description" content="Preliminary privacy policy for LOOPZ based on verified repository audit findings. Local processing, third-party requests, and developer-confirmation items are clearly marked.">
+  <meta name="twitter:image" content="assets/images/loopz-app-icon-512.png">
+  <link rel="icon" href="assets/images/loopz-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="LOOPZ home">
+        <img src="assets/images/loopz-mark.svg" alt="" width="38" height="38">
+        <span>LOOPZ</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" data-nav aria-label="Primary">
+        <a href="index.html">Home</a><a href="index.html#features">Features</a><a href="download.html">Download</a><a href="privacy.html" class="active" aria-current="page">Privacy</a><a href="faq.html">FAQ</a><a href="changelog.html">Changelog</a><a class="nav-cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>Privacy Policy</h1>
+        <p class="lead">This preliminary privacy policy is based on verified findings from a read-only audit of the LOOPZ repository. It is intended to be clear and factual. Items that require developer confirmation are explicitly marked.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container prose reveal">
+        <div class="policy-meta">
+          <div><span>Status:</span> <strong>Preliminary — based on repository audit</strong></div>
+          <div><span>App version referenced:</span> <strong>LOOPZ 1.1.0</strong></div>
+          <div><span>Last updated:</span> <strong>2026</strong></div>
+        </div>
+
+        <div class="notice-box">
+          <p><strong>Important:</strong> This page is not a claim that LOOPZ collects absolutely no data. LOOPZ processes data locally on your device and, when you use supported download or network features, may send requests to third-party platforms and media hosts.</p>
+        </div>
+
+        <h2>1. Overview</h2>
+        <p>LOOPZ is an Android application for downloading, organizing, browsing, and editing media. Based on the audited repository, no evidence was found of analytics SDKs, advertising SDKs, crash-reporting services, user accounts, or a LOOPZ backend.</p>
+
+        <h2>2. Local processing and local storage</h2>
+        <p>Most application settings and user data are stored locally on the device. Based on verified audit findings, LOOPZ may store or process the following locally:</p>
+        <ul>
+          <li><strong>App settings and preferences</strong>, such as feature toggles and user preferences.</li>
+          <li><strong>Download history and metadata</strong>, such as file names, paths, original links, timestamps, categories, and related item metadata.</li>
+          <li><strong>Studio drafts and project data</strong>, including locally stored draft information.</li>
+          <li><strong>Thumbnails and related media information</strong> used by app features.</li>
+          <li><strong>Downloaded media files</strong> saved to device storage through Android system/app storage flows.</li>
+          <li><strong>Temporary files</strong> created during editing/export or download processing, where applicable.</li>
+        </ul>
+        <p>Local processing means this information is handled on your device by the app. It does not mean the information is never involved in network requests when you choose to use features that contact third-party services.</p>
+
+        <h2>3. Information transmitted to third-party services</h2>
+        <p>When you initiate supported downloads or related network operations, user-initiated media URLs and network requests are sent to third-party platforms and media hosts for extraction and downloading. This can include the URL you submit, request headers required by the service, and technical network information inherently involved in internet communication, such as your IP address as seen by the destination service.</p>
+        <p>LOOPZ does not appear to operate its own backend for these requests based on the audited repository. The destinations are third-party platforms/media hosts involved in the requested download or media retrieval process.</p>
+
+        <h2>4. Clipboard access</h2>
+        <p>Clipboard contents may be accessed when clipboard functionality is enabled. Based on the audit, clipboard access is used for supported link detection, paste, or floating capture behavior. Clipboard contents are not shown by the audit to be persistently stored by the app as a general clipboard log, but if a recognized link is processed, that link may cause network requests to third-party services.</p>
+
+        <h2>5. Permissions and device features</h2>
+        <p>LOOPZ may request Android permissions needed for features you use, such as internet access, media/storage access, notifications, or overlay/floating capture permissions. You can manage permissions through Android system settings. Denying optional permissions may limit related features.</p>
+
+        <h2>6. Analytics, advertising, accounts, and crash reporting</h2>
+        <p>Based on the audited repository:</p>
+        <ul>
+          <li>No evidence of analytics SDKs was found.</li>
+          <li>No evidence of advertising SDKs was found.</li>
+          <li>No evidence of crash-reporting services was found.</li>
+          <li>No evidence of user accounts was found.</li>
+          <li>No evidence of a LOOPZ backend was found.</li>
+        </ul>
+        <p>This statement reflects the audited repository state and should be rechecked if future versions add third-party services or backend functionality.</p>
+
+        <h2>7. Data retention and deletion</h2>
+        <p>LOOPZ stores certain data locally, including download history, settings, Studio drafts, thumbnails, and related media information. You may be able to delete downloaded media, drafts, temporary files, or app data depending on the feature and Android behavior.</p>
+        <div class="notice-box">
+          <p><strong>Developer confirmation required:</strong> Exact retention periods, Android backup behavior, thumbnail fetch/cache retention details, and uninstall behavior for all locally stored data should be confirmed by the developer before publishing a final legal privacy policy.</p>
+        </div>
+        <ul class="confirm-list">
+          <li>Confirm whether Android auto-backup includes app settings, history, or drafts.</li>
+          <li>Confirm whether downloaded files in public/shared storage remain after uninstall.</li>
+          <li>Confirm retention/cleanup behavior for thumbnails, caches, and temporary files.</li>
+          <li>Confirm any remote thumbnail fetching behavior and its privacy implications.</li>
+        </ul>
+
+        <h2>8. Children’s privacy</h2>
+        <p>LOOPZ does not appear to provide user accounts or a LOOPZ backend based on the audited repository. A final privacy policy should include developer-confirmed age, child-safety, and legal compliance statements appropriate for the app’s distribution and target audience.</p>
+
+        <h2>9. Changes to this policy</h2>
+        <p>This policy may be updated when LOOPZ features, supported platforms, permissions, third-party services, or legal requirements change. The published version should include a confirmed effective date and contact details.</p>
+
+        <h2>10. Contact</h2>
+        <p>For privacy questions or support, contact: <a data-support-email href="#support-placeholder">Official support email: to be confirmed</a>.</p>
+        <p class="muted"><strong>Placeholder notice:</strong> Official company/legal entity name, postal address, and final legal contact details must be added before publishing a final legal privacy policy.</p>
+      </div>
+    </section>
+    
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="LOOPZ home">
+            <img src="assets/images/loopz-mark.svg" alt="" width="38" height="38">
+            <span>LOOPZ</span>
+          </a>
+          <p>Your media. Your space. An Android app for downloading, organizing, browsing, and editing media.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a data-support-email href="#support-placeholder">Official support email: to be confirmed</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul><li><a href="privacy.html">Privacy Policy</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LOOPZ. All rights reserved.</p>
+        <p class="disclaimer">LOOPZ is independent and is not affiliated with, endorsed by, or sponsored by Instagram, Meta, or X.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
